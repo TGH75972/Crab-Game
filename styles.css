@@ -1,22 +1,39 @@
 body {
     background-color: black;
     color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Verdana', Geneva, Tahoma, sans-serif;
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
     padding: 20px;
     border-radius: 10px;
     background-color: rgb(0, 99, 129);
-    margin-top: 120px;
-    width: 700px;
-    margin-left: 300px;
+    margin: 120px auto;
+    width: 70%;
+    max-width: 700px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .math-problem {
     font-size: 24px;
     margin: 20px 0;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.math-problem:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 input[type="text"] {
@@ -25,30 +42,50 @@ input[type="text"] {
     padding: 10px;
     font-size: 18px;
     margin-right: 10px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: rgb(255, 140, 0);
+    outline: none;
 }
 
 button {
     border: 2px solid rgb(170, 63, 1);
-    border-radius: 10px ;
+    border-radius: 10px;
     background-color: aqua;
     color: black;
     padding: 10px 15px;
     font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
-button:hover{
+
+button:hover {
     background-color: yellow;
+    transform: scale(1.05);
 }
 
 .message {
     margin-top: 20px;
     font-size: 20px;
+    animation: slideIn 1s ease-in-out;
 }
 
 .crab-status {
     margin-top: 10px;
     font-size: 18px;
 }
-h1{
+
+h1 {
     font-size: 50px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
