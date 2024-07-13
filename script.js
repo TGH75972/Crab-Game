@@ -32,7 +32,7 @@ function generateMathProblem() {
             answer = num1 * num2;
             break;
         case '/':
-            problem = `${num1 * num2} / ${num2}`; 
+            problem = `${num1 * num2} / ${num2}`;
             answer = num1;
             break;
     }
@@ -42,13 +42,13 @@ function generateMathProblem() {
 
 function setNewProblem() {
     currentProblem = generateMathProblem();
-    document.getElementById('math-problem').innerText = currentProblem.problem;
+    document.getElementById('math-problem').innerText = currentProblem.problem + ' ?';
     document.getElementById('answer').value = '';
     document.getElementById('submit').disabled = true;
 }
 
 let currentProblem = generateMathProblem();
-document.getElementById('math-problem').innerText = currentProblem.problem;
+document.getElementById('math-problem').innerText = currentProblem.problem + '= ?';
 
 document.getElementById('answer').addEventListener('input', function () {
     const button = document.getElementById('submit');
@@ -85,7 +85,7 @@ function displayFinalResult() {
         messageElement.innerText = "The Crab bit you and there is no one to help you!";
     }
 
-    resetGame();
+    setTimeout(resetGame, 3000); 
 }
 
 function resetGame() {
